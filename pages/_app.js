@@ -8,31 +8,31 @@ import Footer from '../components/Footer';
 import Head from 'next/head'
 
 
+const theme = createTheme({
+  palette: {
+    // mode:'light',
+    // primary: {
+    //   main:'#00FF00',
+    //   light:'#00FF00',
+    //   dark:'#00FF00'
+    // },
+    secondary:{
+      main:grey[100]
+    },
+    background: {
+      default:grey[100]
+    }
+  },
+  typography:{
+    fontFamily:[
+      'Oxanium',
+    ]
+  },
+});
 
 
 function MyApp({ Component, pageProps }) {
 
-  const theme = createTheme({
-    palette: {
-      // mode:'light',
-      // primary: {
-      //   main:'#00FF00',
-      //   light:'#00FF00',
-      //   dark:'#00FF00'
-      // },
-      secondary:{
-        main:grey[100]
-      },
-      background: {
-        default: `${Component.name === 'FindMMR' ? grey[100]:blue[600]}`
-      }
-    },
-    typography:{
-      fontFamily:[
-        'Oxanium',
-      ]
-    },
-  });
   
   
   return (
