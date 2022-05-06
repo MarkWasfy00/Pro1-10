@@ -6,7 +6,8 @@ import Header from '../components/Header';
 import NextNProgress from "nextjs-progressbar";
 import Footer from '../components/Footer';
 import Head from 'next/head'
-
+import NoEnough from '../components/NoEnough'
+import React from 'react';
 
 const theme = createTheme({
   palette: {
@@ -33,8 +34,14 @@ const theme = createTheme({
 
 function MyApp({ Component, pageProps }) {
 
-  
-  
+  const [isLoaded , setLoaded] = React.useState(true);
+
+  React.useEffect(() => {
+    window.onload = () => {
+      setInterval(() => setLoaded(false) , 2000)
+    }
+  },[])
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -45,6 +52,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="robots" content="index , follow" />
         <link rel="icon" href="/lol.png" type="image/gif" sizes="16x16"></link>
       </Head>
+      {isLoaded && <NoEnough msg={'MMR...'} fw={'800'} />}
       <Header />
       <NextNProgress 
         color={`${blue[600]}`}

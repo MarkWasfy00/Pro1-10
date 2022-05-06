@@ -2,7 +2,7 @@ import React from 'react'
 import {Typography } from '@mui/material';
 
 
-function NoEnough({msg}) {
+function NoEnough({msg , fw = '500'}) {
   return (
     <>
         <Typography sx={{
@@ -14,7 +14,9 @@ function NoEnough({msg}) {
             overflow:'hidden',
             display:'flex',
             justifyContent:'center',
-            alignItems:'center'
+            alignItems:'center',
+            zIndex:'999',
+            fontWeight:`${fw}`
             }}>{msg}</Typography>
     </>
   )
