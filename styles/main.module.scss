@@ -1,0 +1,43 @@
+.form{
+    display: flex;
+    // flex-direction: f;
+    gap: .5rem;
+    justify-content: center;
+    
+}
+
+.btn{
+    width: 5rem;
+}
+
+.text{
+    border-color: green;
+}
+
+#vidPlayer{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    
+}
+
+.notFound{
+    position: relative;
+    &::after{
+        content: 'NO HISTORY FOUND';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        
+    }
+}
+
+.disabled{
+    pointer-events: none;
+    opacity: .5;
+}
+
