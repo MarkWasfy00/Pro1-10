@@ -50,7 +50,6 @@ function MyApp({ Component, pageProps }) {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <meta name="description" content="MMR or MatchMaking Rating is a number used by League of Legends to represent a player’s skill level. Your MMR determines the opponents you play against and is unique for each game mode. WhatIsMyMMR specifically tracks solo non-premade games played in ranked, normal, and ARAM queues. Read more about MMR on Riot’s website."/>
         <meta name="robots" content="index , follow" />
-        <link rel="icon" href="/lol.png" type="image/gif" sizes="16x16"></link>
       </Head>
       {isLoaded && <NoEnough msg={'MMR...'} fw={'800'} />}
       <Header />

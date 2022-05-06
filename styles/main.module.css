@@ -1,0 +1,45 @@
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .5rem;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.btn {
+  width: 5rem;
+}
+
+.text {
+  border-color: green;
+}
+
+#vidPlayer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.notFound {
+  position: relative;
+}
+
+.notFound::after {
+  content: 'NO HISTORY FOUND';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .5;
+}
+/*# sourceMappingURL=main.module.css.map */
