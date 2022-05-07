@@ -4,7 +4,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link rel="icon" href="/lol.png" type="image/gif" sizes="16x16" />
+        <link rel="icon" href="/MMR.png" type="image/gif" sizes="16x16" />
         <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=G-3W351QLER0`}
