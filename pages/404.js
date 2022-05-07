@@ -15,7 +15,8 @@ function ErrPage() {
             overflow:'hidden',
             display:'flex',
             justifyContent:'center',
-            alignItems:'center'
+            alignItems:'center',
+            zIndex:'999'
             }} >
                404 PAGE NOT FOUND
             </Typography>

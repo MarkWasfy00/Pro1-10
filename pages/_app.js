@@ -8,6 +8,12 @@ import Footer from '../components/Footer';
 import Head from 'next/head'
 import NoEnough from '../components/NoEnough'
 import React from 'react';
+import { useRouter } from 'next/router'
+
+
+
+
+
 
 const theme = createTheme({
   palette: {
@@ -35,6 +41,8 @@ const theme = createTheme({
 function MyApp({ Component, pageProps }) {
 
   const [isLoaded , setLoaded] = React.useState(true);
+  const router = useRouter()
+  const { query } = router
 
   React.useEffect(() => {
     window.onload = () => {
@@ -58,7 +66,7 @@ function MyApp({ Component, pageProps }) {
         height={2}
       />
       <Component {...pageProps} />
-      {Component.name !== 'Home' ? <Footer /> : ''}
+      { query.params && <Footer />}
     </ThemeProvider>
   )
 }
