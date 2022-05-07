@@ -27,8 +27,8 @@ function GamingChart({ranked}) {
         datasets: [{
           label: 'MMR HISTORY',
           data: YAxis.reverse(),
-          backgroundColor: `${blue[600]}`,
-          borderColor: `${blue[600]}`,
+          backgroundColor: `${red[500]}`,
+          borderColor: `${red[500]}`,
           tension:0.3
         }]
     };
@@ -61,27 +61,27 @@ function GamingChart({ranked}) {
             x: {
                 grid:{
                     display:false,
-                    borderColor:`${grey[900]}`
+                    borderColor:`${grey[600]}`
                 },
                 ticks:{
                     font:{
                         family: 'Oxanium',
                         weight:500,
                     },
-                    // color:'white'
+                    color:grey[300]
                 }
             },
             y: {
                 grid:{
                     display:false,
-                    borderColor:`${grey[900]}`
+                    borderColor:`${grey[600]}`
                 },
                 ticks:{
                     font:{
                         family: 'Oxanium',
                         weight:500,
                     },
-                    // color:'white'
+                    color:grey[300]
                 },
             },
         },

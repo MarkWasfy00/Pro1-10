@@ -77,9 +77,9 @@ function Search() {
     
   return (
     <>
-        <video id={style.vidPlayer} autoPlay muted loop>         
+        {/* <video id={style.vidPlayer} autoPlay muted loop>         
             <source src='/lool.mp4' type="video/mp4"/>       
-        </video>
+        </video> */}
         
         <Container maxWidth='lg' sx={{
             pt:'2rem'
@@ -111,7 +111,7 @@ function Search() {
                 color:grey[100],
                 // textShadow: `2px 2px 2px ${red[500]}`,
                 
-            }} >GET YOUR REALTIME MMR</Typography>
+            }} >GET YOUR REALTIME MMR💯</Typography>
             <form className={style.form}>
                 <StyleText sx={{flexGrow:'.5'}} label='Summoner' value={username} onChange={ (e) => setUsername(e.target.value)} required placeholder="250IQ"  variant="outlined"  />
                 <StyleText  variant="outlined" label="Region" select value={region} onChange={(e) => setRegion(e.target.value)}>
@@ -121,7 +121,7 @@ function Search() {
                     <MenuItem value='kr' >KR</MenuItem>
                 </StyleText>
                 {/* <Button  sx={{display:`${loadingBtn ? 'none':'block'}`}} color="secondary" size="large" onClick={checker} variant="contained" type="submit">Search</Button> */}
-                <LoadingButton sx={{'&:disabled':{backgroundColor:'white'}}} loading={loadingBtn}  color="secondary" size="large" onClick={checker} variant="contained" type="submit"  >Search</LoadingButton>
+                <LoadingButton sx={{'&:disabled':{backgroundColor:grey[100]},'.MuiLoadingButton-loadingIndicator':{color:grey[900]}}} loading={loadingBtn}  color="secondary" size="large" onClick={checker} variant="contained" type="submit"  >Search</LoadingButton>
             </form>
             <Box sx={{position:'fixed',bottom:"2rem",left:{xs:'1rem',md:'50%'},right:{xs:'1rem',md:'unset'},transform:{xs:'none',md:'translateX(-50%)'},zIndex:'10'}}>
                 <Accordion sx={{backgroundColor:grey[900],color:'white'}}>

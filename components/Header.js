@@ -1,7 +1,7 @@
 import React from 'react'
 import { Container, Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import { blue, grey} from '@mui/material/colors';
+import { blue, grey,red} from '@mui/material/colors';
 import Link from 'next/link'
 import { styled } from '@mui/system';
 import style from '../styles/main.module.scss'
@@ -13,10 +13,10 @@ const StyledLink = styled(Box)({
     alignItems:'center',
     position:'relative',
     "&:hover":{
-        color:blue[600],
+        color:red[500],
         cursor:'pointer',
         transition:'500ms',
-        borderBottom:'1px solid white'
+        borderBottom:`1px solid ${red[500]}`
     },
 })
 
@@ -33,7 +33,7 @@ function Header() {
             backgroundColor:grey[900],
             height:'4rem',
             color:grey[100],
-            // borderBottom:`${grey[100]} solid 1px`,
+            // borderBottom:`${red[500]} solid 1px`,
             // borderBottomLeftRadius: '15px',
             // borderBottomRightRadius: '15px',
         }} 

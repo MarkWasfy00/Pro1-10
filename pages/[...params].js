@@ -6,22 +6,30 @@ import GamingChart from '../components/GamingChart';
 import { fromUnixTime , format  } from 'date-fns'
 import { Box } from '@mui/system';
 import NoEnough from '../components/NoEnough';
+import Head from 'next/head';
 
 function FindMMR({mmr,username,region,code,msg}) {
   if(code === 200){
     const ranked = mmr.ranked
     return (
-      <Container maxWidth="lg" sx={{pt:'2rem',color:`${grey[900]}`}}>
-        <Typography sx={{fontWeight:'600',fontSize:{xs:'2.5rem' , md:'5rem'}}} align='center'>{username}</Typography>
-        <Typography sx={{fontWeight:'300',fontSize:'1rem',mt:{xs:'-1rem' ,  md:'-2rem'}}} align='center'>#{region}</Typography>
-        <Box sx={{display:'flex',justifyContent:"center",alignItems:'center',gap:'.5rem'}}>
-          <Typography sx={{fontWeight:'500',fontSize:{xs:'2rem',md:'3rem'}}}>Average MMR : {ranked.avg}</Typography>
-          <Typography sx={{fontWeight:'500',fontSize:{xs:'1rem',md:'2rem'},color:`${ranked.err > 50 ? green[500] : red[500]}`}}>±{ranked.err}</Typography>
-        </Box>
-        <Typography sx={{fontWeight:'500',fontSize:'2rem',pb:'1rem'}} align='center'>CLOSEST RANK : {ranked.closestRank}</Typography>
-        <GamingChart ranked={ranked} />
-        <Typography sx={{fontWeight:'500',fontSize:'1rem'}} align='center'>Last Updated : {format(fromUnixTime(ranked.timestamp),'MMM-d')}</Typography>
-      </Container>
+      <>
+        <Head>
+          <title>{username} MMR</title>
+        </Head>
+        <main>
+          <Container maxWidth="lg" sx={{pt:'2rem',color:`${grey[100]}`}}>
+            <Typography sx={{fontWeight:'600',fontSize:{xs:'2.5rem' , md:'5rem'}}} align='center'>{username}</Typography>
+            <Typography sx={{fontWeight:'300',fontSize:'1rem',mt:{xs:'-1rem' ,  md:'-2rem'}}} align='center'>#{region}</Typography>
+            <Box sx={{display:'flex',justifyContent:"center",alignItems:'center',gap:'.5rem'}}>
+              <Typography sx={{fontWeight:'500',fontSize:{xs:'2rem',md:'3rem'}}}>Average MMR : {ranked.avg}</Typography>
+              <Typography sx={{fontWeight:'500',fontSize:{xs:'1rem',md:'2rem'},color:`${ranked.err > 50 ? green[500] : red[500]}`}}>±{ranked.err}</Typography>
+            </Box>
+            <Typography sx={{fontWeight:'500',fontSize:'2rem',pb:'1rem'}} align='center'>CLOSEST RANK : {ranked.closestRank}</Typography>
+            <GamingChart ranked={ranked} />
+            <Typography sx={{fontWeight:'500',fontSize:'1rem'}} align='center'>Last Updated : {format(fromUnixTime(ranked.timestamp),'MMM-d')}</Typography>
+          </Container>
+        </main>
+      </>
     )
   } else {
     return <NoEnough msg={msg} />
