@@ -24,7 +24,7 @@ const theme = createTheme({
     //   dark:'#00FF00'
     // },
     secondary:{
-      main:grey[100]
+      main:`${grey[100]}`
     },
     background: {
       default:grey[100]
@@ -39,14 +39,13 @@ const theme = createTheme({
 
 
 function MyApp({ Component, pageProps }) {
-
-  const [isLoaded , setLoaded] = React.useState(true);
+  const [isLoading , setLoading] = React.useState(true);
   const router = useRouter()
   const { query } = router
 
   React.useEffect(() => {
     window.onload = () => {
-      setInterval(() => setLoaded(false) , 2000)
+      setInterval(() => setLoading(false) , 2000)
     }
   },[])
 
@@ -59,7 +58,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="description" content="MMR or MatchMaking Rating is a number used by League of Legends to represent a player’s skill level. Your MMR determines the opponents you play against and is unique for each game mode. WhatIsMyMMR specifically tracks solo non-premade games played in ranked, normal, and ARAM queues. Read more about MMR on Riot’s website."/>
         <meta name="robots" content="index , follow" />
       </Head>
-      {isLoaded && <NoEnough msg={'MMR...'} fw={'800'} />}
+      {isLoading && <NoEnough msg={'LOADING...'} fw={'800'} />}
       <Header />
       <NextNProgress 
         color={`${blue[600]}`}

@@ -48,8 +48,12 @@ const StyleText = styled(TextField)({
         '&.Mui-focused': {
             color: searchColor,
         },
-    }
+    },
 })
+
+
+
+// 
 
 
 function Search() {
@@ -116,10 +120,10 @@ function Search() {
                     <MenuItem value='na' >NA</MenuItem>
                     <MenuItem value='kr' >KR</MenuItem>
                 </StyleText>
-                <Button sx={{display:`${loadingBtn ? 'none':'block'}`}} color="secondary" size="large" onClick={checker} variant="contained" type="submit">Search</Button>
-                <LoadingButton loading  sx={{display:`${loadingBtn ? 'block':'none'}`}}  size="large" variant="contained">Submit</LoadingButton>
+                {/* <Button  sx={{display:`${loadingBtn ? 'none':'block'}`}} color="secondary" size="large" onClick={checker} variant="contained" type="submit">Search</Button> */}
+                <LoadingButton sx={{'&:disabled':{backgroundColor:'white'}}} loading={loadingBtn}  color="secondary" size="large" onClick={checker} variant="contained" type="submit"  >Search</LoadingButton>
             </form>
-            <Box sx={{position:'fixed',bottom:"2rem",left:'50%',transform:'translateX(-50%)'}}>
+            <Box sx={{position:'fixed',bottom:"2rem",left:{xs:'1rem',md:'50%'},right:{xs:'1rem',md:'unset'},transform:{xs:'none',md:'translateX(-50%)'},zIndex:'10'}}>
                 <Accordion sx={{backgroundColor:grey[900],color:'white'}}>
                     <AccordionSummary
                     expandIcon={<ExpandMoreIcon sx={{color:'white'}} />}
@@ -129,7 +133,7 @@ function Search() {
                     <Typography sx={{fontWeight:'600'}}>What Affects Your MMR?</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                    <Typography>
+                    <Typography sx={{fontSize:{xs:'.8rem' ,md:'1rem'}}}>
                         League Points increase or decrease every time you play, based on your result. But the amount by which they increase or decrease varies based on your hidden MMR. If your MMR is considerably higher than that of your current bracket, you are expected to more often. And when you do win, your reward is smaller. But if you lose, the punishment is greater. MMR changes every time you lose or win a ranked game. Normal games do not count. That is why, if you want to learn a new champion or test a new strategy, you should play unranked.
                     </Typography>
                     </AccordionDetails>
@@ -143,8 +147,8 @@ function Search() {
                     <Typography sx={{fontWeight:'600'}}>What Is MMR in League of Legends</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                    <Typography>
-                    If you play LoL, you’ve probably asked yourself more than once: “What’s my MMR? Where can I find a LoL MMR checker that will help me discover my League MMR?” Using our tool, you can actually calculate your MMR in League of Legends. Read on to learn how to use it.
+                    <Typography sx={{fontSize:{xs:'.8rem' ,md:'1rem'}}}>
+                        If you play LoL, you’ve probably asked yourself more than once: “What’s my MMR? Where can I find a LoL MMR checker that will help me discover my League MMR?” Using our tool, you can actually calculate your MMR in League of Legends. Read on to learn how to use it.
                     </Typography>
                     </AccordionDetails>
                 </Accordion>
